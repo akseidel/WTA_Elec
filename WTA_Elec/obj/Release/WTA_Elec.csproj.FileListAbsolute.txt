@@ -1,0 +1,12 @@
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll.config
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.pdb
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.g.cs
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.cache
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.lref
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.baml
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.g.resources
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.ParamReport.resources
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.csproj.GenerateResource.Cache
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.dll
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.pdb

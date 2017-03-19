@@ -1,0 +1,44 @@
+﻿<Window x:Class="WTA_Elec.FormMsgWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WTA_Elec"
+        mc:Ignorable="d"
+        Title="Position As You Like." 
+        Height="100"
+        Width="280"
+        Closing="Window_Closing" Loaded="Window_Loaded" 
+        Topmost="True" 
+        WindowStyle="None"
+        Background="White" BorderThickness="0" LocationChanged="Window_LocationChanged"  
+    >
+    <DockPanel LastChildFill="True" 
+               MouseEnter="DockPanel_MouseEnter" 
+               MouseUp="DockPanel_MouseUp" Margin="2,0"  >
+       
+            <Label x:Name="MsgLabelTop"
+               HorizontalAlignment="Center"
+               Content="Purpose" 
+               FontSize="12" 
+               DockPanel.Dock="Top"
+                />
+        <Label x:Name="MsgLabelBot" 
+               HorizontalAlignment="Center"
+               Content="(Press ESC to Cancel)"
+               FontSize="10" 
+               DockPanel.Dock="Bottom"/>
+        <Viewbox >
+            <TextBlock x:Name="MsgTextBlockMainMsg"   
+                   TextWrapping="Wrap" 
+                   Width="200"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextAlignment="Center"
+                   Text="The main message body is here. What happens when really long?"  
+                   FontSize="12"  Margin="2,0" />
+        </Viewbox>
+    
+    </DockPanel>
+
+</Window>
