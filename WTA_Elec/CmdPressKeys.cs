@@ -45,6 +45,26 @@ namespace WTA_Elec {
             SCANCODE_TO_LR_VKEY = 3
         }
 
+        // maybe this sends an escape  
+        static public void PressEsc(IntPtr handle) {
+            uint escScanCode = (uint)System.Windows.Forms.Keys.Escape;
+            uint keyDownCode = (uint)
+             WH_KEYBOARD_LPARAM.KEYDOWN
+             | (escScanCode << 16);
+
+            uint keyUpCode = (uint)
+              WH_KEYBOARD_LPARAM.KEYUP
+              | (escScanCode << 16);
+
+            PostMessage(handle,
+              (uint)KEYBOARD_MSG.WM_KEYDOWN,
+              escScanCode, keyDownCode);
+
+            PostMessage(handle,
+              (uint)KEYBOARD_MSG.WM_KEYUP,
+              escScanCode, keyUpCode);
+        }
+
         /// <summary>
         /// Post one single keystroke.
         /// </summary>
@@ -82,6 +102,15 @@ namespace WTA_Elec {
         }
     }
     #endregion //Press class: encapsulates PostMessage and provides Keys method
+
+    // http://thebuildingcoder.typepad.com/blog/2010/11/launching-a-revit-command.html
+    // With this in place, we can go ahead and implement the external command. 
+    // It requires two helper methods: GetFirstWallTypeNamed retrieves the appropriate wall type
+    // for a given wall type name, and GetFirstWallUsingType retrieves the first wall element encountered
+    // in the model making use of a given wall type. Both of these obviously use filtered element 
+    // collectors, and both of them even use parameter filters. GetFirstWallTypeNamed uses the 
+    // built-in parameter SYMBOL_NAME_PARAM and a string equality filter to do its job, i.e. to
+    // return the first wall type with the given name:
 
     //[Transaction(TransactionMode.Manual)]
     //class CmdPressKeys : IExternalCommand {

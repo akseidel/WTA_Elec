@@ -61,13 +61,157 @@ namespace WTA_Elec.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("280")]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
         public double FormMSG_WD {
             get {
                 return ((double)(this["FormMSG_WD"]));
             }
             set {
                 this["FormMSG_WD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("WTA Families")]
+        public string RootSearchPath {
+            get {
+                return ((string)(this["RootSearchPath"]));
+            }
+            set {
+                this["RootSearchPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PreferedLTTag {
+            get {
+                return ((string)(this["PreferedLTTag"]));
+            }
+            set {
+                this["PreferedLTTag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PrefLeader {
+            get {
+                return ((bool)(this["PrefLeader"]));
+            }
+            set {
+                this["PrefLeader"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrefLTTagFltr {
+            get {
+                return ((string)(this["PrefLTTagFltr"]));
+            }
+            set {
+                this["PrefLTTagFltr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastContextMode {
+            get {
+                return ((string)(this["LastContextMode"]));
+            }
+            set {
+                this["LastContextMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrefSWTagFltr {
+            get {
+                return ((string)(this["PrefSWTagFltr"]));
+            }
+            set {
+                this["PrefSWTagFltr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PreferedSWTag {
+            get {
+                return ((string)(this["PreferedSWTag"]));
+            }
+            set {
+                this["PreferedSWTag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool tbNewState {
+            get {
+                return ((bool)(this["tbNewState"]));
+            }
+            set {
+                this["tbNewState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool tbExistState {
+            get {
+                return ((bool)(this["tbExistState"]));
+            }
+            set {
+                this["tbExistState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool chkSync {
+            get {
+                return ((bool)(this["chkSync"]));
+            }
+            set {
+                this["chkSync"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int OnPhaseStatusBasis {
+            get {
+                return ((int)(this["OnPhaseStatusBasis"]));
+            }
+            set {
+                this["OnPhaseStatusBasis"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TagOtherViews {
+            get {
+                return ((bool)(this["TagOtherViews"]));
+            }
+            set {
+                this["TagOtherViews"] = value;
             }
         }
     }

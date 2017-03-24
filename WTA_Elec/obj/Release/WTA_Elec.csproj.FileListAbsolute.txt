@@ -1,12 +1,38 @@
+E:\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll.config
+E:\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll
+E:\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.pdb
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.csprojResolveAssemblyReference.cache
+E:\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.g.cs
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.cache
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.lref
+E:\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.baml
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.g.resources
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.ParamReport.resources
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.csproj.GenerateResource.Cache
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.dll
+E:\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.pdb
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll.config
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.pdb
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\TwoPickTagWPF.baml
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.g.cs
+C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\TwoPickTagWPF.g.cs
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.cache
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.lref
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.baml
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.g.resources
-C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.ParamReport.resources
-C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.csproj.GenerateResource.Cache
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.dll
 C:\VS-Projects\Visual Studio 2010\Projects\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.pdb
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll.config
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.dll
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\bin\Release\WTA_Elec.pdb
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.csprojResolveAssemblyReference.cache
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\TwoPickTagWPF.baml
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.g.cs
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\TwoPickTagWPF.g.cs
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.cache
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec_MarkupCompile.lref
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\FormMsgWPF.baml
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.g.resources
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.dll
+E:\VSProjects\Revit\GitHub\WTA_Elec\WTA_Elec\obj\Release\WTA_Elec.pdb

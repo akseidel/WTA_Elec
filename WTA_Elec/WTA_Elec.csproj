@@ -115,28 +115,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppElecRibbon.cs" />
-    <Compile Include="CeilingSelector.cs" />
+    <Compile Include="CeilingSelectorElec.cs" />
+    <Compile Include="FindLights.cs" />
     <Compile Include="CmdPlaceElecFamilyInstance.cs" />
     <Compile Include="CmdPressKeys.cs" />
-    <Compile Include="Command.cs" />
     <Compile Include="FamilyUtils.cs" />
-    <Compile Include="FormMsgWPF.xaml.cs" />
+    <Compile Include="FormMsgWPF.xaml.cs">
+      <DependentUpon>FormMsgWPF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IElementSelectionFilter.cs" />
     <Compile Include="ILogicalCombinationFilter.cs" />
     <Compile Include="IReferenceSelectionFilter.cs" />
     <Compile Include="JtWindowHandle.cs" />
-    <Compile Include="ParamReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParamReport.designer.cs">
-      <DependentUpon>ParamReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlunkOClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TwoPickTagWPF.xaml.cs">
+      <DependentUpon>TwoPickTagWPF.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelFilter.cs" />
     <Compile Include="Util.cs" />
@@ -152,18 +151,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ParamReport.resx">
-      <DependentUpon>ParamReport.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="FormMsgWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TwoPickTagWPF.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TwoPickTag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TwoPickTagSwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InfoLg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SENSDETSM.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SENSDETLG.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterClean">
@@ -173,10 +183,33 @@
     <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2013\RevitAddin2016Template.dll" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)$(ProjectName).addin" "$(AppData)\Autodesk\REVIT\Addins\2016"
-copy "$(ProjectDir)$(ProjectName).addin" "$(AppData)\Autodesk\REVIT\Addins\2015"
-	
-xcopy "$(TargetDir)$(ProjectName).dll" "$(AppData)\Autodesk\REVIT\Addins\2016" /k /e /y /r
-xcopy "$(TargetDir)$(ProjectName).dll" "$(AppData)\Autodesk\REVIT\Addins\2015" /k /e /y /r</PostBuildEvent>
+    <PostBuildEvent>rem echo --- Post build events ---
+rem echo Attach digital signature to the dll:
+rem setlocal
+rem call "C:\Developer\WTA_CertA_Sign_EnvVar.bat"
+rem "C:\Program Files (x86)\Windows Kits\8.1\bin\x64\signtool.exe" sign /fd SHA256 /f "C:\Developer\WTA_CertificateA.pfx" /p "%25SIGNPASS%25" "$(TargetDir)$(TargetFileName)"
+rem endlocal
+
+rem echo Timestamp the signature:
+rem "C:\Program Files (x86)\Windows Kits\8.1\bin\x64\signtool.exe" timestamp /td SHA256 /tr "http://sha256timestamp.ws.symantec.com/sha256/" "$(TargetDir)$(TargetFileName)"
+rem echo ---
+rem echo Copy addin manifest file:
+rem echo Manifest file: about to copy "$(ProjectDir)$(TargetName).addin" "$(AppData)\Autodesk\REVIT\Addins\2015"
+rem copy "$(ProjectDir)$(TargetName).addin" "$(AppData)\Autodesk\REVIT\Addins\2015"
+rem echo Manifest file: about to copy "$(ProjectDir)$(TargetName).addin" "$(AppData)\Autodesk\REVIT\Addins\2016"
+rem copy "$(ProjectDir)$(TargetName).addin" "$(AppData)\Autodesk\REVIT\Addins\2016"
+rem echo ---
+rem echo Copy the addin dll file:
+rem xcopy "$(TargetDir)$(TargetFileName)" "$(AppData)\Autodesk\REVIT\Addins\2015" /k /y /r
+rem xcopy "$(TargetDir)$(TargetFileName)" "$(AppData)\Autodesk\REVIT\Addins\2016" /k /y /r
+rem echo ---
+rem echo About to copy the fresh builds to "c:\FreshBuilds" folder for distribution:
+rem md  "c:\FreshBuilds"
+rem xcopy "$(TargetDir)$(TargetFileName)" "c:\FreshBuilds" /k /y /r
+rem xcopy "$(ProjectDir)$(TargetName).addin" "c:\FreshBuilds" /k /y /r
+rem echo ---
+rem echo The new builds are at "c:\FreshBuilds".
+rem echo --- Done with post build events ---
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

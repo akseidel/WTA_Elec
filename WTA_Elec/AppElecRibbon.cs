@@ -9,11 +9,10 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 #endregion
 
-
 namespace WTA_Elec {
     class AppElecRibbon : IExternalApplication {
         static string _path = typeof(Application).Assembly.Location;
-
+        public string docsPath = "N:\\CAD\\BDS PRM 2016\\WTA Common\\Revit Resources\\WTAAddins\\SourceCode\\Docs";
         /// Singleton external application class instance.
         internal static AppElecRibbon _app = null;
         /// Provide access to singleton class instance.
@@ -51,47 +50,61 @@ namespace WTA_Elec {
                 // Assume error generated is due to "WTA" already existing
             }
             //   Add ribbon panels.
-            String thisNewPanelNamA = "Be This";
-            RibbonPanel thisNewRibbonPanelA = a.CreateRibbonPanel(thisNewTabName, thisNewPanelNamA);
+            String thisNewPanelBe = "Be This";
+            RibbonPanel thisNewRibbonPanelBe = a.CreateRibbonPanel(thisNewTabName, thisNewPanelBe);
 
-            String thisNewPanelNamB = "Light Fixtures";
-            RibbonPanel thisNewRibbonPanelB = a.CreateRibbonPanel(thisNewTabName, thisNewPanelNamB);
+            String thisNewPanelNamLFixt = "Light Fixtures";
+            RibbonPanel thisNewRibbonPanelLFixt = a.CreateRibbonPanel(thisNewTabName, thisNewPanelNamLFixt);
 
-            String thisNewPanelNameC = "Aiming Lights";
-            RibbonPanel thisNewRibbonPanelC = a.CreateRibbonPanel(thisNewTabName, thisNewPanelNameC);
-
+            String thisNewPanelNameAim = "Aiming Lights";
+            RibbonPanel thisNewRibbonPanelAim = a.CreateRibbonPanel(thisNewTabName, thisNewPanelNameAim);
 
             //System.Windows.MessageBox.Show(a.GetRibbonPanels(thisNewTabName).Count.ToString());
 
             //   Create push buttons 
             PushButtonData pbTwoPickTagLight = new PushButtonData("TwoPickLightingTag", "Two Pick\nLighting Tag", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdTwoPickLightingTag");
+            PushButtonData pbTwoPickTagSwitch = new PushButtonData("TwoPickSwitchTag", "Two Pick\nDevice Tag", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdTwoPickSwitchTag");
             PushButtonData pbTwoPickAimLight = new PushButtonData("AimLight", " Aim ", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdTwoPickLightRot");
             PushButtonData pbAimManyLights = new PushButtonData("AimManyLights", " Aim Many", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdAimManyLights");
-            PushButtonData pb3DAim = new PushButtonData("3DAim", " 3d Aim", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdTwoPickSprinkRot3D");
-
+        
             PushButtonData pbBeLighting = new PushButtonData("BeLighting", "Lighting", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdBeLightingWorkSet");
             PushButtonData pbBePower = new PushButtonData("BePower", "Power", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdBePowerWorkSet");
             PushButtonData pbBeAuxiliary = new PushButtonData("BeAuxiliary", "Auxiliary", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdBeAuxiliaryWorkSet");
             PushButtonData pbSelOnlyLights = new PushButtonData("SelOnlyLightFix", "Only Fixtures", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdPickOnlyLights");
             PushButtonData pbSelOnlyDevices = new PushButtonData("SelOnlyDevices", "Only Devices", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdPickOnlyDevices");
+            PushButtonData pbLightingReporter = new PushButtonData("LRPT", "Room Picker", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdRoomLightingReporter");
+            PushButtonData pbLightingTotReport = new PushButtonData("LRPTOT", "LPD Totalizer", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdRoomsLightPwrDensityReport");
+
+            PushButtonData pbOCCDetTool = new PushButtonData("OCCDetTool", "OCC Det Tool", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdPlaceOCCSensorToolInstance");
+            pbOCCDetTool.ToolTip = "Places Occupancy sensor detection tool.";
+            string lDescOCCDetTool = "Requires a linked ceiling pick to set the sensor detection family tool's parameter. The tool adjusts the detection pattern " +
+                                    "according to the ceiling height from the ceiling pick. Without a ceiling, place otherwise and manually change the instance parameter as needed. " + 
+                                    "Use the family's type selector to get the detection pattern you are interested in. " +
+                                    "The tool is placed on a diagnostic workset that will be created if needed.";
+            pbOCCDetTool.LongDescription = lDescOCCDetTool;
+            pbOCCDetTool.ToolTipImage = NewBitmapImage(System.Reflection.Assembly.GetExecutingAssembly(), ExecutingAssemblyName + ".SENSDETLG.PNG");
+            pbOCCDetTool.Image = NewBitmapImage(System.Reflection.Assembly.GetExecutingAssembly(), ExecutingAssemblyName + ".SENSDETSM.PNG");
+
 
             //   Set the large image shown on button
             //Note that the full image name is namespace_prefix + "." + the actual imageName);
-            pbTwoPickTagLight.LargeImage = NewBitmapImage(System.Reflection.Assembly.GetExecutingAssembly(), "WTA_Elec.TwoPickTag.png");
-
+            pbTwoPickTagLight.LargeImage = NewBitmapImage(System.Reflection.Assembly.GetExecutingAssembly(), ExecutingAssemblyName + ".TwoPickTag.png");
+            pbTwoPickTagSwitch.LargeImage = NewBitmapImage(System.Reflection.Assembly.GetExecutingAssembly(), ExecutingAssemblyName + ".TwoPickTagSwitch.png");
 
             // add button tips (when data, must be defined prior to adding button.)
-            pbTwoPickTagLight.ToolTip = "Places lighting tag in two picks.";
+            pbTwoPickTagLight.ToolTip = "Places lighting tag in two or less picks.";
+            pbTwoPickTagSwitch.ToolTip = "Places device tag in two or less picks.";
+
             pbTwoPickAimLight.ToolTip = "2D Aims a non hosted light.";
             pbAimManyLights.ToolTip = "2D Aims a selection of non hosted lights.";
-            pb3DAim.ToolTip = "EXPERIMENTAL, 3D Aims a special element.";
-
+         
             pbBeLighting.ToolTip = "Switch to Lighting Workset.";
             pbBePower.ToolTip = "Switch to Power Workset.";
             pbBeAuxiliary.ToolTip = "Switch to Auxiliary Workset.";
             pbSelOnlyLights.ToolTip = "Selecting only lighting fixtures.";
             pbSelOnlyDevices.ToolTip = "Selecting only lighting devices.";
 
+            pbLightingReporter.ToolTip = "Reports on all lighting in a room.";
 
             string lDescpbTwoPickTagLight = "Places the lighting tag in two picks.\nThe first pick selects the light fixture.\nThe second pick is the tag location.";
             string lDescpbTwoPickAimLight = "Pick a light.\nThen pick where it is supposed to aim.";
@@ -106,7 +119,6 @@ namespace WTA_Elec {
             pbTwoPickTagLight.LongDescription = lDescpbTwoPickTagLight;
             pbTwoPickAimLight.LongDescription = lDescpbTwoPickAimLight;
             pbAimManyLights.LongDescription = lDescpbAimManyLights;
-            pb3DAim.LongDescription = lDescpb3DAim;
             pbSelOnlyLights.LongDescription = lDescSelOnlyLights;
             pbSelOnlyDevices.LongDescription = lDescSelOnlyDevices;
             pbBeLighting.LongDescription = lDescBeLighting;
@@ -115,18 +127,31 @@ namespace WTA_Elec {
 
             // add to ribbon panelA
             List<RibbonItem> projectButtonsA = new List<RibbonItem>();
-            projectButtonsA.AddRange(thisNewRibbonPanelA.AddStackedItems(pbBeLighting, pbBePower, pbBeAuxiliary));
+            projectButtonsA.AddRange(thisNewRibbonPanelBe.AddStackedItems(pbBeLighting, pbBePower, pbBeAuxiliary));
 
             // add to ribbon panelB
-            thisNewRibbonPanelB.AddItem(pbTwoPickTagLight);
-            thisNewRibbonPanelB.AddSeparator();
+            thisNewRibbonPanelLFixt.AddItem(pbTwoPickTagLight);
+            thisNewRibbonPanelLFixt.AddItem(pbTwoPickTagSwitch);
+            thisNewRibbonPanelLFixt.AddSeparator();
             List<RibbonItem> projectButtonsB = new List<RibbonItem>();
-            projectButtonsB.AddRange(thisNewRibbonPanelB.AddStackedItems( pbSelOnlyLights, pbSelOnlyDevices));
+            projectButtonsB.AddRange(thisNewRibbonPanelLFixt.AddStackedItems(pbSelOnlyLights, pbSelOnlyDevices));
+            thisNewRibbonPanelLFixt.AddSeparator();
+            List<RibbonItem> projectButtonsBB = new List<RibbonItem>();
+            projectButtonsBB.AddRange(thisNewRibbonPanelLFixt.AddStackedItems(pbLightingReporter, pbOCCDetTool, pbLightingTotReport));
 
             // add to ribbon panelC
             List<RibbonItem> projectButtonsC = new List<RibbonItem>();
-            projectButtonsC.AddRange(thisNewRibbonPanelC.AddStackedItems(pbTwoPickAimLight, pbAimManyLights, pb3DAim));
+            projectButtonsC.AddRange(thisNewRibbonPanelAim.AddStackedItems(pbTwoPickAimLight, pbAimManyLights));
             //projectButtons.AddRange(thisNewRibbonPanel.AddStackedItems(pbData2DN, pbData4DN, pbDataAPN));
+
+            thisNewRibbonPanelBe.AddSlideOut();
+            PushButtonData bInfo = new PushButtonData("Info", "Info", ExecutingAssemblyPath, ExecutingAssemblyName + ".CmdOpenDocFolder");
+            bInfo.ToolTip = "See the help document regarding this.";
+            bInfo.LargeImage = NewBitmapImage(System.Reflection.Assembly.GetExecutingAssembly(), ExecutingAssemblyName + ".InfoLg.png");
+            thisNewRibbonPanelBe.AddItem(bInfo);
+
+            thisNewRibbonPanelLFixt.AddSlideOut();
+            thisNewRibbonPanelLFixt.AddItem(bInfo);
 
         } // AddMech_WTA_Elec_Ribbon
 

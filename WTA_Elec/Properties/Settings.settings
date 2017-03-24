@@ -12,7 +12,43 @@
       <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="FormMSG_WD" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">280</Value>
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="RootSearchPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">WTA Families</Value>
+    </Setting>
+    <Setting Name="PreferedLTTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrefLeader" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PrefLTTagFltr" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastContextMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrefSWTagFltr" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PreferedSWTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="tbNewState" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="tbExistState" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="chkSync" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OnPhaseStatusBasis" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="TagOtherViews" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
