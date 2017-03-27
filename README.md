@@ -2,7 +2,7 @@
 
 ![RibbonTab](/ElecRibbonTab.PNG)
 
-Revit Add-in in c# &ndash; Creates a custom ribbon Tab with discipline related tools. The tools at this writing are for placing specific Revit family|types with some families requiring parameter settings made on the fly.
+Revit Add-in in c# &mdash; Creates a custom ribbon Tab with discipline related tools. The tools at this writing are for placing specific Revit family types with some families requiring parameter settings made on the fly.
 
 This repository is provided for sharing and learning purposes. Perhaps someone might provide improvements or education. Perhaps it will help to boost someone further up the steep learning curve needed to create Revit task add-ins. Hopefully it does not show too much of the wrong way.  
 
